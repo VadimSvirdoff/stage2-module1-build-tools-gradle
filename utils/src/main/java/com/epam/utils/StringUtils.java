@@ -6,11 +6,11 @@ public class StringUtils {
             return false;
         }
 
-        for (char c : str.toCharArray()) {
-                return false;
+        try{
+            int number = Integer.parseInt(str);
+            return number > 0;
+        }  catch (NumberFormatException ex) {
+            return false;
         }
-
-        int number = Integer.parseInt(str);
-        return number > 0;
     }
 }

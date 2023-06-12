@@ -17,9 +17,6 @@ publishing {
             groupId = 'com.example'
             artifactId = 'stage2-build-tools-gradle'
             version = '1.0-SNAPSHOT'
-// provide groupId
-// provide artifactId
-// provide version
 
             from components.java
         }
@@ -31,11 +28,9 @@ dependencies {
     implementation project(':utils')
 }
 
-//add Apache Apache Commons Lang 3.10 (or higher) dependency
 
 jar {
     manifest {
-        //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
         attributes 'Implementation-Title': 'stage2-build-tools-gradle'
         attributes 'Implementation-Version': project.version
     }

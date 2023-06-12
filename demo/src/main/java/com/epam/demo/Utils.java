@@ -1,5 +1,6 @@
 package com.epam.demo;
 
+import com.epam.utils.StringUtils;
 import java.util.List;
 
 public class Utils {
@@ -9,18 +10,9 @@ public class Utils {
         }
 
         for (String str : args) {
-            if (str == null || str.isEmpty()) {
+            if (!StringUtils.isPositiveNumber(str)) {
                 return false;
             }
-
-            for (char c : str.toCharArray()) {
-                if (!Character.isDigit(c)) {
-                    return false;
-                }
-            }
-
-            int number = Integer.parseInt(str);
-            return number > 0;
         }
 
         return true;

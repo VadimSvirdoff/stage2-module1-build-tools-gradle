@@ -1,4 +1,44 @@
-//add everything here
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+java {
+    sourceCompatibility = '1.8'
+}
+
+repositories {
+    mavenCentral()
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId = 'com.example'
+            artifactId = 'stage2-build-tools-gradle'
+            version = '1.0-SNAPSHOT'
+// provide groupId
+// provide artifactId
+// provide version
+
+            from components.java
+        }
+    }
+}
+
+dependencies {
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
+}
+
+//add Apache Apache Commons Lang 3.10 (or higher) dependency
+
+jar {
+    manifest {
+        //provide manifest with such attributes as 'Implementation-Title', 'Implementation-Version'
+        attributes 'Implementation-Title': 'stage2-build-tools-gradle'
+        attributes 'Implementation-Version': project.version
+    }
+}
 
 test {
     useJUnitPlatform()

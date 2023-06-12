@@ -7,9 +7,7 @@ public class StringUtils {
         }
 
         for (char c : str.toCharArray()) {
-            if (!Character.isDigit(c)) {
                 return false;
-            }
         }
 
         int number = Integer.parseInt(str);
